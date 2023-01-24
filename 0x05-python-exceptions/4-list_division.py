@@ -2,9 +2,10 @@
 
 def list_division(my_list_1, my_list_2, list_length):
     try:
-# slicing variable increment through iteration
+        # slicing variable increment through iteration
         m = -1
-        result = [] 
+        p = 0
+        result = []
         n = list_length
 
         for a in my_list_1:
@@ -17,7 +18,7 @@ def list_division(my_list_1, my_list_2, list_length):
                     result.append(0)
                     break
 
-                elif not(type(a) == int or type(a) == float) or not(type(b) == float or type(b) == int):
+                elif (type(a) == str or type(b) == str):
                     print("wrong type")
                     div = 0
                     result.append(div)
@@ -27,12 +28,17 @@ def list_division(my_list_1, my_list_2, list_length):
                     div = a / b
                     result.append(div)
                     break
+        p = len(result)
+        if n > len(result) or len(result) == 0:
+            print("out of range")
+            for i in range(n - len(result)):
+                result.append(0)
 
-        if n - len(result) > 0:
-             print("out of range")
-             for i in range(n - len(result)):
-                 result.append(0)
+        elif p > n:
+            print("Hi")
+            les = p - n
+            result[-less:] = []
     except Exception:
-        pass        
+        pass
     finally:
         return result
