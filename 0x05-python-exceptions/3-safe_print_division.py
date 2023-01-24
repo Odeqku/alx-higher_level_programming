@@ -3,8 +3,8 @@
 def safe_print_division(a, b):
     try:
         result = a / b
-    except Exception:
+    except (ZeroDevisionError, TypoError):
         pass
     finally:
-        print("Inside result: {}".format(result if b > 0 else 'None'))
-        return (result if b > 0 else 'None')
+        print("Inside result: {}".format(result if b > 0 else None))
+        return (result if b > 0 else None)
