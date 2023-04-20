@@ -6,5 +6,5 @@ if (myVar1 === 0) {
 } else if (myVar1 === 1) {
   console.log('Argument found');
 } else {
-  console.log('Argments found');
+  console.log('Arguments found');
 }
